@@ -1,4 +1,7 @@
+
+//classe criada pela google para poder usar o evento de click na nossa recycle view
 package com.vk.whatsapplist.RecyclerItemClickListener;
+
 
 import android.content.Context;
 

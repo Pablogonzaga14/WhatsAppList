@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+    <!--aqui estamos envelopando nossa toolbar dentro dessa appbarlayout e depois criamos um constrant
+    layout para podermos personaliza-lá do jeito que preferirmos-->
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -34,7 +35,7 @@
 
 
     </com.google.android.material.appbar.AppBarLayout>
-
+<!--Aqui criamos nossa recycle view que será ela que receberá nossa lista-->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle_usuarios"
         android:layout_width="match_parent"

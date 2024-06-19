@@ -14,17 +14,22 @@ import com.vk.whatsapplist.R;
 
 import java.util.ArrayList;
 import java.util.List;
+//essa classe adapter tem que herdar as caracteristicar de recyclerview e pra isso ele precisa
+//de um viewHolder para poder exibir os itens atravez de um usuario
 
+//criando a classe para usar o viewHolder
 public class AdapterUsuarios extends RecyclerView.Adapter<AdapterUsuarios.UsuarioViewHolder> {
 
     private List<Usuario> usuarioList = new ArrayList<>();
 
+    //construtor da nossa lista
     public AdapterUsuarios(List<Usuario> usuarioList) {
         this.usuarioList = usuarioList;
     }
 
     @NonNull
     @Override
+    //metodo responsavel por criar nossas visualizações
     public UsuarioViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View intemLista;
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
@@ -33,17 +38,20 @@ public class AdapterUsuarios extends RecyclerView.Adapter<AdapterUsuarios.Usuari
     }
 
     @Override
+    //retorna a quantidade total da nossa lista e usamos o usuarios.list para a lista sempre crescer quando adicionarmos 1 item
     public int getItemCount() {
         return usuarioList.size();
     }
 
     @Override
+    //metodo que exibe nossa view holder
     public void onBindViewHolder(@NonNull UsuarioViewHolder holder, int position) {
         holder.foto.setImageResource(usuarioList.get(position).getFoto());
         holder.nome.setText(usuarioList.get(position).getNome());
         holder.mensagem.setText(usuarioList.get(position).getMensagem());
     }
 
+    //construtor para o nosso view holder
     public class UsuarioViewHolder extends RecyclerView.ViewHolder{
         private ImageView foto;
         private TextView nome;

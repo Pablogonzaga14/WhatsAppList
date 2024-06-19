@@ -37,9 +37,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
         recycler_usuario =findViewById(R.id.recycle_usuarios);
+
+        /*Aqui estamos passando que nossa  recycleview será horizontal e ela esta na nossa main activity*/
         recycler_usuario.setLayoutManager(new LinearLayoutManager(MainActivity.this,LinearLayoutManager.VERTICAL,false));
+
+        //metodo para dar mais desempenho a nossa lista na hora de fazer a reciclagem
         recycler_usuario.setHasFixedSize(true);
+
+       //aqui estamos iniciando nossa classe adapter usuario e chamando nossa lista
         AdapterUsuarios adapterUsuarios = new AdapterUsuarios(usuarioList);
+
+        //metodo usado para podermos adaptarmos nossos usuarios a nossa lista
         recycler_usuario.setAdapter(adapterUsuarios);
 
         Usuarios();
@@ -56,7 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
                         Toast.makeText(getApplicationContext(),"Usuario " + usuario.getNome(),Toast.LENGTH_SHORT).show();
                     }
-
+                    // evento de clique longo
                     @Override
                     public void onLongItemClick(View view, int position) {
 
@@ -70,6 +78,8 @@ public class MainActivity extends AppCompatActivity {
         ));
 
     }
+
+    //criando nossos usuarios da nossa lista
     public void Usuarios(){
         Usuario usuario1 = new Usuario(R.drawable.zoro,"Zoro","Vk sabe onde está o barco?");
         usuarioList.add(usuario1);
